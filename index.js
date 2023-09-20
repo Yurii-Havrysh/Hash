@@ -62,7 +62,8 @@ class HashTable {
       const bucket = this.buckets[index];
   
       for (let i = 0; i < bucket.length; i++) {
-        if (bucket[i].key === key) {
+        const [existingKey, _] = bucket[i]; 
+        if (existingKey === key) {
           bucket.splice(i, 1); 
           return; 
         }
